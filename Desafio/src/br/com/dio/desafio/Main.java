@@ -44,7 +44,7 @@ public class Main {
 				double valor = 0;
 				if(opcao != 3) {
 					
-					System.out.println("Valor?(0,0)");
+					System.out.println("Valor?");
 		    	
 					valor = scanner.nextDouble();
 				}
@@ -56,8 +56,9 @@ public class Main {
 		        
     		} catch(Exception ex) {
     			
-    			System.out.println(ex.getMessage().concat(
-    					"\nDigite uma opção válida: 1, 2 ou 3 ou o valor em double por exemplo 22,55"));
+    			System.out.print(ex.getMessage());
+    			System.out.println(
+    					"\nDigite uma opção válida: 1, 2 ou 3 ou o valor em double por exemplo 22,55 ou 33\n");
     			
     			if (scanner.hasNextLine()) {
     				scanner.nextLine();
