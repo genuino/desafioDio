@@ -38,27 +38,29 @@ public class Main {
 			    		System.exit(0);
 			    		break;
 			    	default:
-			    		System.out.println("Digite uma opção válida: 1, 2 ou 3.");
+			    		System.out.println("\nDigite uma opção válida: 1, 2, 3 ou 4.\n");
 				}
 		        
 				double valor = 0;
-				if(opcao != 3) {
+				if(opcao == 1 || opcao == 2) {
 					
 					System.out.println("Valor?");
 		    	
 					valor = scanner.nextDouble();
 				}
 				
-		        Facade facade = new Facade();
-		        String retorno = facade.realizarOperacoes(definidaOperacao, valor);
-		        
-		        System.out.println("\n".concat(retorno).concat("\n"));
-		        
+				if(definidaOperacao != null) {
+			        Facade facade = new Facade();
+			        String retorno = facade.realizarOperacoes(definidaOperacao, valor);
+			        
+			        System.out.println("\n".concat(retorno).concat("\n"));
+				}
+				
     		} catch(Exception ex) {
     			
     			System.out.print(ex.getMessage());
     			System.out.println(
-    					"\nDigite uma opção válida: 1, 2 ou 3 ou o valor em double por exemplo 22,55 ou 33\n");
+    					"\nDigite uma opção válida: 1, 2, 3 ou 4 e o valor por exemplo 22,55 ou 33\n");
     			
     			if (scanner.hasNextLine()) {
     				scanner.nextLine();
